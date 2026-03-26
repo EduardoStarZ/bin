@@ -13,16 +13,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 cd ~
 
-git clone https://github.com/EduardoStarZ/dotfiles .config
+git clone https://github.com/EduardoStarZ/dotconfig .config
 
 git clone https://github.com/EduardoStarZ/st st
 cd st
 sudo make clean install
-cd ..
+cd ~
 
-sudo pacman -Sy --noconfirm neovim nvm yarn pnpm npm nodejs rustup ripgrep discord ttf-jetbrains-mono nerd-fonts picom dunst maim xclip xrandr zip unzip thunar yazi go github-cli ffmpeg rofi ly
+sudo pacman -Sy --noconfirm neovim npm nodejs rustup ripgrep discord ttf-jetbrains-mono nerd-fonts dunst maim xclip xrandr zip unzip nautilus yazi go github-cli ffmpeg rofi ly gnome-keyring polybar bluetui
 
-sudo systemctl enable ly.service
-sudo systemctl start ly.service
+sudo systemctl enable ly@tty1
+sudo systemctl enable ly@tty2
 
-yay -Sy zen-browser-bin libreoffice-still 7zip
+yay -Sy zen-browser-bin libreoffice-still 7zip betterlockscreen
