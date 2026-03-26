@@ -1,0 +1,3 @@
+#!/bin/sh
+
+du -cha --max-depth=1 $1 | grep -E "M|G"
