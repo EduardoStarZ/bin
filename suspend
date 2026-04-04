@@ -1,0 +1,24 @@
+#!/bin/sh
+
+USER=star
+USER_HOME=/home/$USER
+LOCKFILE="/tmp/powerbtn.lock"
+
+# If triggered recently, ignore
+if [ -f "$LOCKFILE" ]; then
+    exit 0
+fi
+
+touch "$LOCKFILE"
+
+# Remove lockfile after short delay
+(sleep 2 && rm -f "$LOCKFILE") &
+
+# Check if system is resuming
+if grep -q "resume" /proc/acpi/wakeup 2>/dev/null; then
+    exit 0
+fi
+
+# Lock screen
+su -l $USER -c 'export DISPLAY=:0; export XAUTHORITY='$USER_HOME'/.Xauthority; setsid /usr/bin/betterlockscreen --lock dimblur --blur 0.6'
+loginctl suspend

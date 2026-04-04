@@ -1,0 +1,4 @@
+#!/bin/sh
+
+betterlockscreen --lock dimblur --blur 0.6 &
+loginctl hibernate
