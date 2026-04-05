@@ -5,3 +5,7 @@ sleep 0.3
 pipewire &
 pipewire-pulse &
 wireplumber &
+killall polybar
+sleep 0.3
+polybar info &
+polybar workspaces &
