@@ -2,3 +2,5 @@
 
 betterlockscreen --lock dimblur --blur 0.6 &
 loginctl hibernate
+sleep 2
+setxkbmap -model abnt-2 -layout br
