@@ -1,0 +1,6 @@
+#!/bin/sh
+
+REPO=$1
+
+git remote set-url --add --push origin https://github.com/EduardoStarZ/$REPO
+git remote set-url --add --push origin https://codeberg.org/EduardoStarZ/$REPO
