@@ -21,4 +21,5 @@ fi
 
 # Lock screen
 su -l $USER -c 'export DISPLAY=:0; export XAUTHORITY='$USER_HOME'/.Xauthority; setsid /usr/bin/betterlockscreen --lock dimblur --blur 0.6'
+sleep 1
 loginctl suspend
